@@ -141,6 +141,7 @@ nav {
 
         &.active {
             display: block;
+            background: rgba(245, 245, 245, 0.95);
         }
 
         .brand {
@@ -149,6 +150,7 @@ nav {
 
         .item-nav {
             height: 70px;
+            border-bottom: 1px dotted #39302F;
         }
     }
 }
@@ -185,9 +187,9 @@ main {
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .accueil {
-        background-position: center;
+@media screen and (max-width: 700px) {
+    .accueil h1 {
+        font-size: 40px;
     }
 }
 
