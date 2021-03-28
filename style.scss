@@ -36,16 +36,17 @@ nav {
     z-index: 150;
 }
 
+.item-nav:nth-child(1) {
+    justify-content: flex-start;
+}
+
 .item-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    .brand {
-        justify-content: flex-start;
+    &.brand {
+        margin-right: auto;
     }
-
-
 
     a {
         font-size: 20px;
@@ -137,16 +138,12 @@ nav {
     }
 
     .liste-nav {
-        display: block;
+        display: none;
         flex-direction: column;
         height: auto;
 
-        .menu-link {
-            display: none;
-
-            .active {
-                display: block;
-            }
+        &.active {
+            display: block;
         }
 
         .item-nav {
