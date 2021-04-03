@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tout l'art du monde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Montserrat+Alternates:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -19,7 +19,7 @@
                 Tout l'art du monde
                 </a>
             </li>
-            <li class="item-nav menu-link"><a href="#apropos"><span>À propos</span></a></li>
+            <li class="item-nav menu-link"><a href="#asym"><span>Atelier vedette</span></a></li>
             <li class="item-nav menu-link"><a href="#ateliers"><span>Ateliers</span></a></li>
             <li class="item-nav menu-link"><a href="#contact"><span>Contact</span></a></li>
         </ul>
@@ -34,33 +34,110 @@
 
     <!-- Section accueil (hero) -->
     <main>
-        <section class="accueil" id="home">
+        <section class="accueil" id="accueil">
             <h1>Explorez le monde autrement</h1>
         </section>
 
+        <!-- section atelier vedette -->
         <section class="asymetrique" id="asym">
             <h2>L'atelier vedette du mois</h2>
             <div class="bloc">
                 <div class="bloc-txt">
-                    <h3></h3>
+                    <h3>Le tatouage au henné</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi quaerat labore numquam vitae aliquam ipsum ea ratione! Placeat eveniet recusandae corporis odit commodi sapiente hic, perferendis, omnis explicabo laudantium voluptatibus?</p>
-                    <button class="btn-bloc" type="button">En savoir plus</button>
+                    <button class="btn-savoir" type="button">En savoir plus</button>
                 </div>
-                <img src="" alt="">
+                <img class="bloc-img" src="ressources/henne.jpg" alt="Indienne en sari avec henné sur les bras">
             </div>
         </section>
 
-        <!-- <section class="infolettre">
-            <div class="form-popup" id="myForm">
-                <form action="/action_page.php" class="form-container">
-                    <h3>Inscrivez-vous à notre infolettre</h3>
-                    <label for="email">Courriel</label>
-                    <input type="text" placeholder="Votre courriel" name="email" required>
-                    <button type="submit" class="btn">Envoyer</button>
-                    <button type="submit" class="btn cancel" onclick="closeForm()">Fermer</button>
-                </form>
+        <!-- section parallax  -->
+        <section class="parallax">
+            <div class="background-layer">
+                <div class="parallax-img">
+                    <img src="/ressources/theater_comedy_white_48dp.svg" alt="theater masks">
+                    <img src="/ressources/palette_white_48dp.svg" alt="painting palette">
+                    <img src="/ressources/piano_white_48dp.svg" alt="piano">
+                    <img src="/ressources/auto_stories_white_48dp.svg" alt="book">
+                    <img src="/ressources/photo_camera_white_48dp.svg" alt="camera">
+                </div>
+                <h2>Découvrez nos ateliers</h2>
             </div>
-        </section> -->
+        </section>
+
+        <!-- section cartes des ateliers -->
+        <section class="ateliers" id="ateliers">
+            <h2>Nos ateliers</h2>
+            <div class="cartes">
+                <article class="carte">
+                    <h4>Théâtre pour enfants</h4>
+                    <img src="/ressources/dessins-arbres-lunes.jpg" alt="dessin arbres lunes noir, gris et rouge">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+                <article class="carte">
+                    <h4>Peindre une fresque murale</h4>
+                    <img src="/ressources/pots-peinture.jpg" alt="pots céramique pinceaux">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+                <article class="carte">
+                    <h4>Les mosaïques</h4>
+                    <img src="/ressources/mosaïques.jpg" alt="mosaïques">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+                <article class="carte">
+                    <h4>Les miroirs en photo</h4>
+                    <img src="/ressources/miroirs.jpg" alt="miroirs au bord d'un lac">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+                <article class="carte">
+                    <h4>Les graffitis</h4>
+                    <img src="/ressources/anne-frank.jpg" alt="Graffiti Anne Frank sur un mur">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+                <article class="carte">
+                    <h4>Les émotions en sculpture</h4>
+                    <img src="/ressources/sculpture.jpg" alt="statue d'un soldat">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+                <article class="carte">
+                    <h4>Les danses indiennes</h4>
+                    <img src="/ressources/indian-dance.jpg" alt="trois filles indiennes dansant une danse traditionnelle">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+                <article class="carte">
+                    <h4>La cuisine russe</h4>
+                    <img src="/ressources/soupe russe.jpg" alt="une soupe russe">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptas iste nemo similique nisi totam recusandae aperiam numquam reprehenderit beatae.</p>
+                    <button class="btn-savoir">En savoir plus</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- section.infolettre -->
+        <section class="infolettre" id="popup">
+            <form action="">
+                <div class="container">
+                        <h2>Inscrivez-vous à notre infolettre</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, optio?</p>
+                </div>
+                <div class="container ombre">
+                    <input type="text" placeholder="Votre nom" name="nom" required>
+                    <input type="email" placeholder="Votre adresse courriel" name="email" required>
+                </div>
+                <div class="container submit">
+                    <input type="submit" value="S'inscrire">
+                </div>
+            </form>
+        </section>
+
+       
 
 
 

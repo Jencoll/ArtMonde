@@ -5,6 +5,30 @@
     transform: translate(-$x, -$y);
 }
 
+@mixin h2-grid {
+    // grid-area: 1 / 1 / 2 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #39302F;
+    font-size: 35px;
+    padding-top: 50px;
+}
+
+@mixin btn-pilule {
+    border-radius: 9999px;
+    outline: 0;
+    border: 0;
+    background-color: #C5635D;
+    border: 1px solid #f1f1f1;
+    color: #f1f1f1;
+    padding: 20px 35px;
+    font-size: 20px;
+    display: block;
+    margin: 10px auto 20px;
+    cursor: pointer;
+}
+
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
@@ -15,6 +39,7 @@ body {
     height: 100vh;
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
 
 // Navigation
 
@@ -177,6 +202,7 @@ main {
     margin: 0 auto;
 
     h1 {
+        position: relative;
         text-align: center;
         margin: 20px auto;
         font-family: 'Chango', cursive;
@@ -187,57 +213,325 @@ main {
     }
 }
 
+@media screen and (max-width: 1250px) {
+    .accueil h1 {
+        padding: 20px 0 20px;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .accueil h1 {
         font-size: 40px;
+        padding: 0 0 20px;
     }
 }
 
-// Popup infolettre
+// Section asymétrique
 
-.form-popup {
-    display: none;
-    position: fixed;
-    @include position(50%, 80%);
-    border: 1px solid #f1f1f1;
-    z-index: 9;
+.asymetrique {
+    display: grid;
+    grid-template: 200px repeat(9, 150px) / 1fr 600px 1fr 600px 1fr;
+    background-color: #f1f1f1;
 
-    .form-container {
-        max-width: 300px;
-        padding: 10px;
-        background-color: rgba(216, 191, 255, 0.7);
+    h2 {
+        @include h2-grid;
+        grid-area: 1 / 1 / 2 / -1;
+    }
 
-        &:input[type=text] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            border: none;
-            background-color: #f1f1f1;
+    .bloc {
+        grid-area: 3 / 2 / 8 / 3;
+        background-color: #39302F;
+        color: #f1f1f1;
+        position: relative;
+        left: 100px;
+        border-radius: 2px;
 
-            &:focus {
-                background-color: #ddd;
-                outline: none;
+        .bloc-txt {
+            width: 50%;
+            height: 100%;
+
+            h3 {
+                width: 150%!important;
+                font-size: 35px;
+                margin: 15px 0;
+                padding: 15px;
+            }
+
+            p {
+                line-height: 40px;
+                padding: 15px;
+            }
+
+            .btn-savoir {
+                @include btn-pilule;
+                background-color: #C8007E;
+                border: 1px solid #39302F;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
 
-        .btn {
-            background-color: #412A45;
-            color: white;
-            padding: 16px 20px;
-            border: none;
-            cursor: pointer;
+        img {
+            position: absolute;
+            left: 300px;
+            top: 100px;
             width: 100%;
-            margin-bottom: 10px;
-            opacity: 0.8;
+        }
+    }
+}
+
+// media queries
+@media screen and (max-width: 1550px) {
+    .asymetrique {
+        grid-template: repeat(11, 100px) / 1fr 400px 1fr;
+
+        .bloc {
+            grid-area: 3 / 2 / 9 / 3;
+            left: -150px;
+
+            .bloc-txt {
+                width: 70%;
+
+                h3 {
+                    font-size: 30px;
+                }
+
+                p {
+                    line-height: 30px;
+                    padding: 15px;
+                }
+
+                .btn-bloc {
+                    padding: 15px 30px;
+                    font-size: 18px;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .asymetrique {
+        grid-template: 200px repeat(13, 100px) / 1fr 400px 1fr;
+
+        h2 {
+            font-size: 45px;
+            padding-top: 0px;
+        }
+
+        .bloc {
+            grid-area: 2 / 2 / 8 / 3;
+            left: 0px;
+            border-bottom: 1px solid #f1f1f1;
+            padding-top: 15px;
+
+            img {
+                top: 600px;
+                left: 0px;
+            }
+
+            .bloc-txt {
+                width: 100%;
+
+                h3 {
+                    width: 100%!important;
+                    text-align: center;
+                    margin: 5px 0;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 40px;
+                }
+
+                .btn-bloc {
+                    margin: 10px auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .asymetrique {
+        grid-template: 200px repeat(11, 100px) / 1fr 320px 1fr;
+
+        h2 {
+            grid-area: 1 / 1 / 2 / -1;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .bloc {
+            .bloc-txt {
+                h3 {
+                    font-size: 25px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+// section parallax
+.parallax {
+    width: 100%;
+    height: 300px;
+    background: url(ressources/paisley.png);
+    background-position: center;
+    background-attachment: fixed;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    position: relative;
+
+    .background-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(67, 42, 43, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        color: #f1f1f1;
+        font-size: 35px;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .parallax {
+        h2 {
+            font-size: 25px;
+        }
+    }
+}
+
+// section ateliers
+
+.ateliers {
+    display: grid;
+    grid-template: 200px / auto;
+
+    h2 {
+        @include h2-grid;
+    }
+
+    .cartes {
+        display: grid;
+        grid-template-columns: repeat(4, 350px);
+        grid-gap: 25px;
+        margin: 100px auto 0;
+
+        .carte {
+            display: grid;
+            box-shadow: 0 0 5px rgba(57, 48, 47, 0.5);
+            grid-template-rows: max-content 400px 1fr;
+
+            color: #382f2e;
+
+            h4 {
+                display: flex;
+                align-items: center;
+                height: 75px;
+                font-size: 24px;
+                padding: 15px;
+                background-color: rgb(57, 48, 47);
+                color: #f1f1f1;
+            }
+
+            p {
+                padding: 20px 15px;
+            }
+
+            .btn-savoir {
+                @include btn-pilule;
+                background-color: #C5635D;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .carte img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .ateliers {
+        h2 {
+            padding-top: 0;
+        }
+
+        .cartes {
+            grid-template-columns: repeat(2, 350px);
+            margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .ateliers {
+        .cartes {
+            grid-template-columns: 350px;
+        }
+    }
+}
+
+// section infolettre
+.infolettre {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+
+    h2 {
+        @include h2-grid;
+        height: 200px;
+    }
+
+    .container {
+        padding: 20px;
+
+        &.ombre {
+            background-color: #f1f1f1;
+            padding: 20px;
+            margin: 20px;
+
+            input {
+                border-radius: 2px;
+                padding: 12px;
+                display: inline-block;
+                margin: 8px 0;
+                width: 100%;
+            }
+        }
+
+        &.submit {
+            [type=submit] {
+                @include btn-pilule;
+            }
 
             &:hover {
-                opacity: 1;
+                opacity: 0.8;
             }
-        }
-
-        .cancel {
-            background-color: red;
         }
     }
 }
-
