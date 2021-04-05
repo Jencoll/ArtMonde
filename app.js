@@ -13,16 +13,3 @@ allLinks.forEach(function(item){
         btn.classList.remove('active');
     })
 })
-
-// function openForm() {
-//     document.getElementById('myForm').style.display = "block";
-// }
-
-// function closeForm() {
-//     document.getElementById('myForm').style.display = "none";
-// }
-
-// const allLinks = document.querySelector('.item-nav');
-
-
-

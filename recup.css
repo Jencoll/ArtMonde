@@ -1,0 +1,128 @@
+ .title-box {
+     background: linear-gradient(to top, rgba(243, 222, 233, 0.95), rgba(243, 222, 233, 0.75));
+     width: 400px;
+     height: auto;
+     padding: 20px;
+     @include position(75%, 75%);
+     border-radius: 10px;
+     border: 5px solid rgba(243, 222, 233, 0.5);
+     opacity: 0.9;
+
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 10px 0;
+        color: #F8FFF9;
+    }
+
+     h2 {
+         font-size: 25px;
+         padding: 10px 0;
+         color: #F8FFF9;
+     }
+
+     .btn-accueil {
+         margin-top: 10px;
+         border-radius: 9999px;
+         border: 1px solid #333;
+         color: #f1f1f1;
+         text-align: center;
+         display: block;
+         width: 200px;
+         height: 50px;
+         line-height: 50px;
+         text-decoration: none;
+         margin: 0 auto;
+         cursor: pointer;
+         transition: all 0.2s ease-in-out;
+         background-color: #412A45;
+     }
+ }
+
+
+
+ .btn-accueil {
+     width: 200px;
+     height: 75px;
+     background-color: rgb(18, 119, 254);
+     position: relative;
+     border-radius: 22px;
+     margin-bottom: 25px;
+     text-align: center;
+     cursor: pointer;
+     transition: all 0.1s ease-in-out;
+     display: block;
+     line-height: 75px;
+     text-decoration: none;
+     margin: 20px auto;
+     box-shadow: -6px -6px 10px rgba(18, 119, 254, 0.8),
+         6px 6px 10px rgba(0, 0, 0, 0.2);
+     color: #f1f1f1;
+
+     span {
+         line-height: 50px;
+         font-size: 24px;
+     }
+
+     &:hover {
+         opacity: 0.3;
+         box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+             6px 6px 10px rgba(0, 0, 0, 0.2);
+     }
+
+     &:active {
+         opacity: 1;
+         box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+             inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+         color: #412A45;
+     }
+ }
+
+
+ // Popup infolettre
+
+ .form-popup {
+     display: none;
+     position: fixed;
+     @include position(50%, 80%);
+     border: 1px solid #f1f1f1;
+     z-index: 9;
+
+     .form-container {
+         max-width: 300px;
+         padding: 10px;
+         background-color: rgba(216, 191, 255, 0.7);
+
+         &:input[type=text] {
+             width: 100%;
+             padding: 15px;
+             margin: 5px 0 22px 0;
+             border: none;
+             background-color: #f1f1f1;
+
+             &:focus {
+                 background-color: #ddd;
+                 outline: none;
+             }
+         }
+
+         .btn {
+             background-color: #412A45;
+             color: white;
+             padding: 16px 20px;
+             border: none;
+             cursor: pointer;
+             width: 100%;
+             margin-bottom: 10px;
+             opacity: 0.8;
+
+             &:hover {
+                 opacity: 1;
+             }
+         }
+
+         .cancel {
+             background-color: red;
+         }
+     }
+ }
